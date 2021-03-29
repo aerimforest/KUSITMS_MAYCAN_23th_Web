@@ -40,9 +40,7 @@
 <form id="searchForm" method="get" action="{% url 'yomember:searchMember' %}">
     <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
 </form>
-
 {% endblock %}
-
 {% block script %}
 <script type='text/javascript'>
 $(document).ready(function(){

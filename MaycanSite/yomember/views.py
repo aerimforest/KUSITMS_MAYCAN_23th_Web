@@ -31,7 +31,7 @@ def searchMember(request):
 
     if kw:
         user_list = user_list.filter(
-            Q(username=kw)
+            Q(username__icontains=kw)
         ).distinct()
 
     context = {'user_list': user_list, 'kw': kw}
