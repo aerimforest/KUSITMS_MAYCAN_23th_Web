@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
-from common.forms import UserForm
+from common.forms import UserForm, ProfileForm
 
 
 def signup(request):
@@ -16,3 +16,17 @@ def signup(request):
     else:
         form = UserForm()
     return render(request, 'common/signup.html', {'form': form})
+
+
+def profile(request):
+    if request.method == 'POST':
+        profileForm = ProfileForm(request.POST, request.FILES)
+        if profileForm.is_valid():
+            profileForm.save()
+            # return HttpResponseRedirect('/success/url/')
+            return redirect('index')
+    else:
+        profileForm = ProfileForm()
+    
+    # profileForm = ProfileForm()
+    return render(request, 'common/profile.html', {'form': profileForm})
