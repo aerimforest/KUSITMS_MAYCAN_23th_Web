@@ -3,7 +3,7 @@
 
 <div class="container">
     <h5 class="my-3 border-bottom pb-2">프로필 등록</h5>
-    <form method="post" class="post-form my-3">
+    <form method="post" class="post-form my-3" enctype="multipart/form-data">
         {% csrf_token %}
         {% include "form_errors.html" %}
         <!-- 오류표시 Start -->
@@ -21,32 +21,32 @@
         <div class="form-group">
             <label for="name">이름</label>
             <input type="text" class="form-control" name="name" id="name"
-                   value="{{ form.subject.value|default_if_none:'' }}">
+                   value="{{ profileForm.name.value|default_if_none:'' }}">
         </div>
         <div class="form-group">
             <label for="college">대학교</label>
             <input type="text" class="form-control" name="college" id="college"
-                   value="{{ form.subject.value|default_if_none:'' }}">
+                   value="{{ profileForm.college.value|default_if_none:'' }}">
         </div>
         <div class="form-group">
             <label for="major">전공</label>
             <input type="text" class="form-control" name="major" id="major"
-                   value="{{ form.subject.value|default_if_none:'' }}">
+                   value="{{ profileForm.major.value|default_if_none:'' }}">
         </div>
         <div class="form-group">
             <label for="age">나이</label>
-            <input type="text" class="form-control" name="age" id="age"
-                   value="{{ form.subject.value|default_if_none:'' }}">
+            <input type="number" class="form-control" name="age" id="age"
+                   value="{{ profileForm.age.value|default_if_none:'' }}">
         </div>
         <div class="form-group">
             <label for="workHistory">이력(ex. 동아리, 프로젝트, 수상 경력 등)</label>
-            <input type="text" class="form-control" name="workHistory" id="workHistory"
-                   value="{{ form.subject.value|default_if_none:'' }}">
+            <textarea type="text" class="form-control" name="workHistory" row="5" id="workHistory"
+            value="{{ profileForm.workHistory.value|default_if_none:'' }}" rows="10">{{ profileForm.workHistory.value|default_if_none:'' }}</textarea>
         </div>
         <div class="form-group">
             <label for="blog">개인 블로그 주소(선택)</label>
-            <input type="text" class="form-control" name="blog" id="blog"
-                   value="{{ form.subject.value|default_if_none:'' }}">
+            <input type="url" class="form-control" name="blog" id="blog"
+                   value="{{ profileForm.blog.value|default_if_none:'' }}">
         </div>
         <div class="form-group">
             <label for="kakaoTalk">카카오톡 대화 파일</label><br>

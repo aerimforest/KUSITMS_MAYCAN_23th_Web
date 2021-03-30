@@ -8,6 +8,7 @@ urlpatterns = [
     path('searchMember', views.searchMember, name='searchMember'),
     path('team', views.team, name='team'),
     path('team/<int:question_id>/', views.detail, name='detail'),
+    path('searchMember/<str:user_username>/', views.userInfo, name='userInfo'),
     path('team/create/', views.question_create, name='question_create'),
     path('team/comment/create/<int:question_id>/', views.comment_create_question, name='comment_create_question'),
     path('team/comment/modify/<int:comment_id>/', views.comment_modify_question, name='comment_modify_question'),

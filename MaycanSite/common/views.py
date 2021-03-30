@@ -22,11 +22,10 @@ def profile(request):
     if request.method == 'POST':
         profileForm = ProfileForm(request.POST, request.FILES)
         if profileForm.is_valid():
+            profileForm = profileForm.save(commit=False)
             profileForm.save()
-            # return HttpResponseRedirect('/success/url/')
             return redirect('index')
     else:
         profileForm = ProfileForm()
     
-    # profileForm = ProfileForm()
-    return render(request, 'common/profile.html', {'form': profileForm})
+    return render(request, 'common/profile.html', {'profileForm': profileForm})

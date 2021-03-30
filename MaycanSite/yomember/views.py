@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.db.models import Q
 from django.http import HttpResponse
+from common.models import Profile
 # Create your views here.
 
 def index(request):
@@ -15,7 +16,6 @@ def index(request):
 def team(request):
     question_list = Question.objects.order_by('-create_date')
     context = {'question_list': question_list}
-
     return render(request, 'yomember/team.html', context)
 
 def detail(request, question_id):
@@ -23,11 +23,16 @@ def detail(request, question_id):
     context = {'question': question}
     return render(request, 'yomember/team_detail.html', context)
 
+def userInfo(request, user_username):
+    profile = Profile.objects.filter(name = user_username)
+    context = {'profile': profile}
+    return render(request, 'yomember/userProfile.html', context)
+
 def searchMember(request):
 
     kw = request.GET.get('kw', '')
 
-    user_list = User.objects.all()
+    user_list = User.objects.all() # 등록된 모든 사용자의 리스트를 db의 User 테이블에서 가져옴
 
     if kw:
         user_list = user_list.filter(

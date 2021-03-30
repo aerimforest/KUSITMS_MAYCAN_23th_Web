@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+{% for profile_detail in profile %}
+<div class="container my-3">
+    <h2 class="border-bottom py-2">{{ profile_detail.name }}</h2>
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;">{{ profile_detail.college }}</div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
