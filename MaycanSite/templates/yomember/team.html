@@ -17,7 +17,7 @@
         <tr class="text-left">
             <td>{{ forloop.counter }}</td>
             <td class="text-left">
-                <a href="{% url 'yomember:detail' question.id %}">{{ question.subject }}</a>
+                <a href="{% url 'yomember:detail' question.id %}" style="color: #EB496B;">{{ question.subject }}</a>
                 {% if question.comment_set.count > 0 %}
                 <span class="text-danger small ml-2">{{ question.comment_set.count }}</span>
                 {% endif %}
@@ -33,6 +33,6 @@
         {% endif %}
         </tbody>
     </table>
-    <a href="{% url 'yomember:question_create' %}" class="btn btn-primary">게시글 등록하기</a>
+    <a href="{% url 'yomember:question_create' %}" class="btn btn-primary" style="background-color: #EB496B; border-color: #EB496B;">게시글 등록하기</a>
 </div>
 {% endblock %}
