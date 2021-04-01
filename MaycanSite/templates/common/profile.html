@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="container">
-    <h5 class="my-3 border-bottom pb-2">프로필 등록</h5>
+    <h5 class="my-3 border-bottom pb-2" style="color: #EB496B;">🔖 프로필 등록</h5>
     <form method="post" class="post-form my-3" enctype="multipart/form-data">
         {% csrf_token %}
         {% include "form_errors.html" %}
@@ -21,39 +21,47 @@
         <div class="form-group">
             <label for="name">이름</label>
             <input type="text" class="form-control" name="name" id="name"
-                   value="{{ profileForm.name.value|default_if_none:'' }}">
-        </div>
+                   value="{{ profileForm.name.value|default_if_none:'' }}" style="border-color: #EB496B;">
+        </div><br><br>
         <div class="form-group">
             <label for="college">대학교</label>
             <input type="text" class="form-control" name="college" id="college"
-                   value="{{ profileForm.college.value|default_if_none:'' }}">
-        </div>
+                   value="{{ profileForm.college.value|default_if_none:'' }}" style="border-color: #EB496B;">
+        </div><br><br>
         <div class="form-group">
             <label for="major">전공</label>
             <input type="text" class="form-control" name="major" id="major"
-                   value="{{ profileForm.major.value|default_if_none:'' }}">
-        </div>
+                   value="{{ profileForm.major.value|default_if_none:'' }}" style="border-color: #EB496B;">
+        </div><br><br>
         <div class="form-group">
             <label for="age">나이</label>
             <input type="number" class="form-control" name="age" id="age"
-                   value="{{ profileForm.age.value|default_if_none:'' }}">
-        </div>
+                   value="{{ profileForm.age.value|default_if_none:'' }}" style="border-color: #EB496B;">
+        </div><br><br>
         <div class="form-group">
-            <label for="workHistory">이력(ex. 동아리, 프로젝트, 수상 경력 등)</label>
+            <label for="workHistory">이력 (ex. 동아리, 프로젝트, 수상 경력 등)</label>
             <textarea type="text" class="form-control" name="workHistory" row="5" id="workHistory"
-            value="{{ profileForm.workHistory.value|default_if_none:'' }}" rows="10">{{ profileForm.workHistory.value|default_if_none:'' }}</textarea>
-        </div>
+            value="{{ profileForm.workHistory.value|default_if_none:'' }}" rows="10" style="border-color: #EB496B;">{{ profileForm.workHistory.value|default_if_none:'' }}</textarea>
+        </div><br><br>
         <div class="form-group">
-            <label for="blog">개인 블로그 주소(선택)</label>
+            <label for="blog">개인 블로그 주소 (선택)</label>
             <input type="url" class="form-control" name="blog" id="blog"
-                   value="{{ profileForm.blog.value|default_if_none:'' }}">
-        </div>
+                   value="{{ profileForm.blog.value|default_if_none:'' }}" style="border-color: #EB496B;">
+        </div><br><br>
+        <div class="form-group">
+            <label for="kakaoName">카카오톡 프로필 이름</label><br>
+            <span style="font-size:0.9em">✔️ 확인 방법: 카카오톡 → 친구 목록 → 내 프로필 이름</span><br>
+            <input type="text" class="form-control" name="kakaoName" id="kakaoName"
+                   value="{{ profileForm.kakaoName.value|default_if_none:'' }}" style="border-color: #EB496B;">
+        </div><br><br>
         <div class="form-group">
             <label for="kakaoTalk">카카오톡 대화 파일</label><br>
-            <input type="file" class="btn btn-primary">
-        </div>
+            <span style="font-size:0.9em">✔️ 팀플 단톡방 중 하나를 골라 대화 파일을 올려주세요!</span><br>
+            <span style="font-size:0.9em">✔️ 대화 파일 내보내는 방법: pc 카카오톡 접속 → 단톡방 → 오른쪽 상단의 '☰' 클릭 → 오른쪽 하단의 '⚙' 클릭 → 대화내용 내보내기 → 텍스트만 보내기</span><br><br>
+            <input type="file" class="btn btn-primary" style="background-color: #EB496B; border-color: #EB496B;">
+        </div><br>
         <br><br>
-        <button type="submit" class="btn btn-primary">저장하기</button>
+        <button type="submit" class="btn btn-primary" style="background-color: #EB496B; border-color: #EB496B;">저장하기</button>
     </form>
 </div>
 {% endblock %}
