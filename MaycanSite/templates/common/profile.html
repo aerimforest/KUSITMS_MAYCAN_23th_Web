@@ -3,7 +3,7 @@
 
 <div class="container">
     <h3 class="my-3 border-bottom pb-2">🔖 프로필 등록</h3>
-    <form method="post" class="post-form my-3" enctype="multipart/form-data">
+    <form action=" " method="post" class="post-form my-3" enctype="multipart/form-data">
         {% csrf_token %}
         {% include "form_errors.html" %}
         <!-- 오류표시 Start -->
@@ -58,7 +58,7 @@
             <label for="kakaoTalk">카카오톡 대화 파일</label><br>
             <span style="font-size:0.9em">✔️ 팀플 단톡방 중 하나를 골라 대화 파일을 올려주세요!</span><br>
             <span style="font-size:0.9em">✔️ 대화 파일 내보내는 방법: pc 카카오톡 접속 → 단톡방 → 오른쪽 상단의 '☰' 클릭 → 오른쪽 하단의 '⚙' 클릭 → 대화내용 내보내기 → 텍스트만 보내기</span><br><br>
-            <input type="file" class="btn btn-primary" style="background-color: #EB496B; border-color: #EB496B;">
+            <input type="file" class="btn btn-primary" name="kakaoTalk" id="kakaoTalk" style="background-color: #EB496B; border-color: #EB496B;">
         </div><br>
         <br><br>
         <button type="submit" class="btn btn-primary" style="background-color: #EB496B; border-color: #EB496B;">저장하기</button>
