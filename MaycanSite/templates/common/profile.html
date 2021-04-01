@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="container">
-    <h5 class="my-3 border-bottom pb-2" style="color: #EB496B;">🔖 프로필 등록</h5>
+    <h3 class="my-3 border-bottom pb-2">🔖 프로필 등록</h3>
     <form method="post" class="post-form my-3" enctype="multipart/form-data">
         {% csrf_token %}
         {% include "form_errors.html" %}

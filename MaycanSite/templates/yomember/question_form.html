@@ -20,13 +20,13 @@
         <div class="form-group">
             <label for="subject">제목</label>
             <input type="text" class="form-control" name="subject" id="subject"
-                   value="{{ form.subject.value|default_if_none:'' }}">
-        </div>
+                   value="{{ form.subject.value|default_if_none:'' }}" style="border-color: #EB496B;">
+        </div><br>
         <div class="form-group">
             <label for="content">내용</label>
             <textarea class="form-control" name="content"
-                      id="content" rows="10">{{ form.content.value|default_if_none:'' }}</textarea>
-        </div>
+                      id="content" rows="10" style="border-color: #EB496B;">{{ form.content.value|default_if_none:'' }}</textarea>
+        </div><br><br>
         <button type="submit" class="btn btn-primary" style="background-color: #EB496B; border-color: #EB496B;">저장하기</button>
     </form>
 </div>
