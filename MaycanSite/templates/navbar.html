@@ -14,7 +14,10 @@
                 {% endif %}
             </li>
             <li class="nav-item ">
+                {% if user.is_authenticated %}
+                {% else %}
                 <a class="nav-link" href="{% url 'common:signup' %}" style="color: black;">회원가입</a>
+                {% endif %}
             </li>
             <li class="nav-item ">
                 <!-- 로그인했을때만 마이페이지 보이게 하기(프로필) -->
