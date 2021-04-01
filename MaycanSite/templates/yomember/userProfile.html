@@ -4,60 +4,34 @@
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     {% for profile_detail in profile %}
     <div class="container my-3">
-        <h2 class="border-bottom py-2">USER PROFILE</h2>
-        <div class="card"> 
-            <div class="card-header">기여도</div><br>
-            <!-- <div class="card-body">
-                <p class="card-text">나중에 채울 곳</p>
-            </div> -->
-            <div class="progress" style="height: 30px;">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">참여성</div>
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">창의성</div>
-                <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">성실성</div>
-              </div>
-        </div><br>
-        <div class="card"> <!-- w-50으로 사이즈 조절 가능 -->
-            <div class="card-header">이름</div>
-            <div class="card-body">
-                <p class="card-text">{{ profile_detail.name }}</p>
-            </div>
-        </div><br>
-        <div class="card"> <!-- w-50으로 사이즈 조절 가능 -->
-            <div class="card-header">대학</div>
-            <div class="card-body">
-                <p class="card-text">{{ profile_detail.college }}</p>
-            </div>
-        </div><br>
-        <div class="card"> 
-            <div class="card-header">전공</div>
-            <div class="card-body">
-                <p class="card-text">{{ profile_detail.major }}</p>
-            </div>
-        </div><br>
-        <div class="card"> 
-            <div class="card-header">나이</div>
-            <div class="card-body">
-                <p class="card-text">{{ profile_detail.age }}</p>
-            </div>
-        </div><br>
-        <div class="card"> 
-            <div class="card-header">이력</div>
-            <div class="card-body">
-                <p class="card-text">{{ profile_detail.workHistory }}</p>
-            </div>
-        </div><br>
-        <div class="card"> 
-            <div class="card-header">개인블로그</div>
-            <div class="card-body">
-                <p class="card-text">{{ profile_detail.blog }}</p>
-            </div>
-        </div><br>
-        <div class="card"> 
-            <div class="card-header">카카오톡 프로필 이름</div>
-            <div class="card-body">
-                <p class="card-text">{{ profile_detail.kakaoName }}</p>
-            </div>
-        </div><br>
+        <h3 class="border-bottom py-2">🔎 USER PROFILE</h3>
+        <br><p style="font-size: 20px; font-weight: bold;">🎈 기여도</p>
+        <p>그래프</p><br><br>
+
+        <p style="font-size: 20px; font-weight: bold;">🎈 이름</p>
+        <p>{{ profile_detail.name }}</p><br><br>
+
+        <p style="font-size: 20px; font-weight: bold;">🎈 대학</p>
+        <p>{{ profile_detail.college }}</p><br><br>
+        
+        <p style="font-size: 20px; font-weight: bold;">🎈 전공</p>
+        <p>{{ profile_detail.major }}</p><br><br>
+        
+        <p style="font-size: 20px; font-weight: bold;">🎈 나이</p>
+        <p>{{ profile_detail.age }}</p><br><br>
+
+        <p style="font-size: 20px; font-weight: bold;">🎈 이력</p>
+        <p>{{ profile_detail.workHistory }}</p><br><br>
+
+        <!-- 블로그 주소 있는 경우만 보여짐 -->
+        {% if profile_detail.blog %}
+        <p style="font-size: 20px; font-weight: bold;">🎈 개인 블로그</p>
+        <p>{{ profile_detail.blog }}</p><br><br>
+        {% else %}
+        {% endif %}
+
+        <p style="font-size: 20px; font-weight: bold;">🎈 카카오톡 프로필 이름</p>
+        <p>{{ profile_detail.kakaoName }}</p><br><br>
     </div>
     {% endfor %}
 {% endblock %}

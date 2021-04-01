@@ -17,7 +17,3 @@ class ProfileForm(ModelForm):
     class Meta:
         model = Profile
         fields=['name', 'college', 'major', 'age', 'workHistory', 'blog', 'kakaoName', 'kakaoTalk']
-
-    def __init__(self, *args, **kwargs):
-        super(ProfileForm, self).__init__(*args, **kwargs)
-        self.fields['kakaoTalk'].required = False
