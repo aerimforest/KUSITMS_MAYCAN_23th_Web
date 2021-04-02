@@ -16,4 +16,4 @@ class UserForm(UserCreationForm):
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        fields=['name', 'college', 'major', 'age', 'workHistory', 'blog', 'kakaoName', 'kakaoTalk']
+        fields=['name', 'college', 'major', 'age', 'workHistory', 'blog', 'kakaoName', 'kakaoTalk', 'value0', 'value1', 'valueName', 'contribution', 'standard']

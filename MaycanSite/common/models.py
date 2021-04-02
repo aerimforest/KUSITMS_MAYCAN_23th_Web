@@ -10,4 +10,9 @@ class Profile(models.Model):
     blog = models.URLField(blank=True) # 개인 블로그(선택 사항)
     kakaoName = models.CharField(max_length=50) # 카카오톡 프로필 이름
     kakaoTalk = models.FileField() # 카카오톡 대화 파일
+    value0 = models.TextField(null=True, blank=True) # 참여성 비율
+    value1 = models.TextField(null=True, blank=True) # 참여성 비율
+    valueName = models.TextField(null=True, blank=True) # 성실성 비율
+    contribution = models.FloatField(null=True, blank=True) # 최종 기여도
+    standard = models.FloatField(null=True, blank=True) # 기준 점수
     cdate = models.DateTimeField(auto_now_add=True) # 게시물 생성 날짜
