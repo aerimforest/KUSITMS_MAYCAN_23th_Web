@@ -143,7 +143,7 @@ def get_contribution(name, weight_list):
     :param weight_list: 가중치 리스트 [참여성, 창의성, 성실성]
     :return: 최종 기여도 점수, 기준(모든 사람이 정확히 1/n 만큼 기여했을 때의 값)
     """
-    value_list = [get_valueRatio(idx)[name] for idx in range(2)]
+    value_list = [json.loads(get_result(idx))[name] for idx in range(2)]
     dict_name = get_nameRatio()
     value_list.append(dict_name[name])
 

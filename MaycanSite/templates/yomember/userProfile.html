@@ -3,10 +3,20 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     {% for profile_detail in profile %}
+    
     <div class="container my-3">
         <h3 class="border-bottom py-2">🔎 USER PROFILE</h3>
-        <br><p style="font-size: 20px; font-weight: bold;">🎈 기여도</p>
-        <p>그래프</p><br><br>
+        <br><p style="font-size: 20px; font-weight: bold;">🎈 기여도</p><br>
+        <p style="font-size: 17px; font-weight: bold;">최종 나의 기여도</p>
+        <p style="font-size: 14px;">빨간선은 팀플에서 최소한으로 기여해야 하는 정도이며, 파란색 막대 그래프는 {{ profile_detail.name }}님의 기여도입니다.</p>
+        <p style="font-size: 14px;">예를 들어, 4명이 있는 단톡방에서는 최소한 25%만큼의 몫은 해야겠죠?^^</p>
+        <img src="/static/{{ profile_detail.name }}_contribution.jpg"><br><br>
+        <p style="font-size: 17px; font-weight: bold;">창의성</p>
+        <img src="/static/{{ profile_detail.name }}_value1.jpg"><br><br>
+        <p style="font-size: 17px; font-weight: bold;">성실성</p>
+        <img src="/static/{{ profile_detail.name }}_value2.jpg"><br><br>
+        <p style="font-size: 17px; font-weight: bold;">참여성</p>
+        <img src="/static/{{ profile_detail.name }}_value0.jpg"><br><br>
 
         <p style="font-size: 20px; font-weight: bold;">🎈 이름</p>
         <p>{{ profile_detail.name }}</p><br><br>

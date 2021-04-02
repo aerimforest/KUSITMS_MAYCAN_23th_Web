@@ -6,6 +6,8 @@ import sqlite3
 from os.path import basename # 파일명 추출
 from pathlib import Path
 import os
+from yomember import graph
+from common import lstm_model
 
 def signup(request):
     if request.method == "POST":
@@ -29,9 +31,8 @@ def profile(request):
             profileForm = profileForm.save(commit=False)
             profileForm.save()
 
-            # print("카카오톡: "+str(profileForm.kakaoTalk))
             filename, fileExtension = os.path.splitext(str(profileForm.kakaoTalk))
-            # print("파일명: "+ str(filename))
+       
             # 사용자가 올린 txt 파일 csv로 변환 -> filename}.csv 생성
             total.create_csv(filename)
 
@@ -43,8 +44,9 @@ def profile(request):
             profileForm.value0 = total.get_result(0)
             profileForm.value1 = total.get_result(1)
             profileForm.valueName = total.get_result('name') 
-            # profileForm.contribution, profileForm.standard = total.get_contribution(str(profileForm.kakaoName), [0.3, 0.3, 0.4])
+            profileForm.contribution, profileForm.standard = total.get_contribution(str(profileForm.kakaoName), [0.3, 0.3, 0.4])
             profileForm.save()
+            graph.start(profileForm.value0, profileForm.value1, profileForm.valueName, profileForm.name, profileForm.contribution, profileForm.standard)
 
             return redirect('index')
     else:

@@ -8,6 +8,7 @@ from django.contrib.auth import get_user_model
 from django.db.models import Q
 from django.http import HttpResponse
 from common.models import Profile
+from yomember import graph
 # Create your views here.
 
 def index(request):
@@ -25,6 +26,7 @@ def detail(request, question_id):
 
 def userInfo(request, user_username):
     profile = Profile.objects.filter(name = user_username)
+    # graph.start(profile)
     context = {'profile': profile}
     return render(request, 'yomember/userProfile.html', context)
 
