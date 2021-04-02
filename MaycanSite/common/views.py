@@ -26,11 +26,12 @@ def profile(request):
     if request.method == 'POST':
         profileForm = ProfileForm(request.POST, request.FILES)
         if profileForm.is_valid():
-            print("카카오톡: "+str(profileForm.name))
-            filename, fileExtension = os.path.splitext(profileForm.kakaoTalk)
-            print("파일명: "+ str(filename))
             profileForm = profileForm.save(commit=False)
             profileForm.save()
+
+            # print("카카오톡: "+str(profileForm.kakaoTalk))
+            filename, fileExtension = os.path.splitext(str(profileForm.kakaoTalk))
+            # print("파일명: "+ str(filename))
             # 사용자가 올린 txt 파일 csv로 변환 -> filename}.csv 생성
             total.create_csv(filename)
 
@@ -38,10 +39,12 @@ def profile(request):
             lstm_model.predict(filename) 
 
             # predict 결과 db 저장
-            total.init(profileForm.kakaoTalk)
+            total.init(filename)
             profileForm.value0 = total.get_result(0)
             profileForm.value1 = total.get_result(1)
-            profileForm.valueName = total.get_result('name') # name 자리에 뭐가 들어가야 함?
+            profileForm.valueName = total.get_result('name') 
+            # profileForm.contribution, profileForm.standard = total.get_contribution(str(profileForm.kakaoName), [0.3, 0.3, 0.4])
+            profileForm.save()
 
             return redirect('index')
     else:

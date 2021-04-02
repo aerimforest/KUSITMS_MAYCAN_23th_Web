@@ -81,22 +81,25 @@ def create_csv(filename):
     global FILE_NAME
     FILE_NAME = filename
     # open_txt = open(f"/data/{filename}.txt", "r")
-    open_txt = open(f"/data/{filename}.txt", "r")
+    open_txt = open(f"media/{filename}.txt", "r")
     lines = open_txt.readlines()
 
     names, dates, words = create_list(lines)
     df = create_df(names, dates, words)
 
     # {filename} 앞까지 로컬에 맞게 저장할 경로 입력
-    df.to_csv(f"/data/{filename}.csv")
+    df.to_csv(f"media/{filename}.csv")
 
 
 # >>> 머신러닝 결과값 비율로 나타내기
 
 def init(filename):
-    data = pd.read_csv(f'/data/{filename}_result.csv')
+    global df
+    global name_list
+    data = pd.read_csv(f'media/{filename}_result.csv')
     df = data.reindex(columns=['name', 'value', 'date', 'word'])
     df = df.sort_values(by=['name', 'value'])
+    name_list = df["name"].drop_duplicates().tolist()
 
 
 def get_nameRatio():
@@ -112,6 +115,12 @@ def get_valueRatio(idx):
 
 def get_ratioJson(df_ratio):
     dict_ratio = df_ratio.to_dict()
+    key_list = list(dict_ratio.keys())
+
+    for name in name_list:
+        if name not in key_list:
+            dict_ratio[name] = 0
+
     json_ratio = json.dumps(dict_ratio, ensure_ascii=False)
     return json_ratio
 
@@ -162,7 +171,7 @@ def create_noun_tags(data):
 
 
 def create_wordcloud(filename, user_name, idx):
-    data = pd.read_csv(f"/data/{filename}_result.csv")
+    data = pd.read_csv(f"media/{filename}_result.csv")
 
     data.name = data["name"].str.strip()
     user = user_name
@@ -176,7 +185,7 @@ def create_wordcloud(filename, user_name, idx):
                       font_path=font_path,
                       background_color="white")
     cloud = cloud.generate_from_frequencies(dict(tags))
-    cloud.to_file(f"/media/{filename}_value{idx}.jpg")
+    cloud.to_file(f"media/{filename}_value{idx}.jpg")
 
 
 # >>> 함수 돌리기

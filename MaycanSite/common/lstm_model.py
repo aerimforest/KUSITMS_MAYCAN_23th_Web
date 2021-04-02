@@ -39,7 +39,7 @@ def get_nounList(data):
 
 
 def predict(filename):
-    df_new = pd.read_csv(f"/data/{filename}.csv")
+    df_new = pd.read_csv(f"media/{filename}.csv")
 
     X_new = df_new.drop(["index"], axis=1)
     new_noun_list = get_nounList(X_new)
@@ -62,7 +62,7 @@ def predict(filename):
     df_value = pd.DataFrame(value_list, columns=["value"])
     df_result = pd.concat([df_new, df_value], axis=1)
 
-    df_result.to_csv(f"/data/{filename}_result.csv")
+    df_result.to_csv(f"media/{filename}_result.csv")
 
 
 # predict(FILE_NAME)
