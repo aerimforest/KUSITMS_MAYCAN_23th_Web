@@ -1,5 +1,7 @@
 # KUSITMS_MAYCAN_23th_Web
-🔖 큐시즘 23기 기업프로젝트
+## 🔖 큐시즘 23기 기업프로젝트  
+
+
 
 ## 🎈 메인 화면
 ![메인화면](https://user-images.githubusercontent.com/52696359/113466030-9cef2400-9473-11eb-9932-bf663b0baa9a.jpg)
