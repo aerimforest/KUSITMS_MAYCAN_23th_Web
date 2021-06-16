@@ -10,7 +10,7 @@
 - Django
 <br/>
 
-### 👥&nbsp;&nbsp;Member
+### 👥&nbsp;&nbsp;Developer
 - Web: [김예림](https://github.com/aerimforest), [나동민](https://github.com/skehdxhd96), [박재은](https://github.com/jaeeunp)
 - Data: 엄세리, 이승민, [최수현](https://github.com/Soohyun-CHOI)
 <br/>
