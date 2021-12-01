@@ -16,27 +16,6 @@
 <br/>
 
 ### 🔐&nbsp;&nbsp;Notice
-- 본 프로젝트에서 사용된 이미지, 로고 및 문구의 무단 도용, 배포 및 사용을 금합니다.  
+- 본 프로젝트에서 사용된 이미지, 로고 및 문구의 무단 도용, 배포 및 사용을 금지합니다.  
   Unauthorized theft, distribution and use of images, logos and text used in this project is prohibited.  
 <br/><br/>
-
-### 🎈 메인 화면
-<img width="800" src="https://user-images.githubusercontent.com/52696359/113466030-9cef2400-9473-11eb-9932-bf663b0baa9a.jpg">
-
-### 🎈 로그인
-<img width="800" src="https://user-images.githubusercontent.com/52696359/113466075-e0e22900-9473-11eb-9cc9-85f6bc243f16.jpg">
-
-### 🎈 회원가입
-<img width="800" src="https://user-images.githubusercontent.com/52696359/113466084-edff1800-9473-11eb-9759-6fddf04cddba.jpg">
-
-### 🎈 프로필 등록
-<img width="800" src="https://user-images.githubusercontent.com/52696359/113466090-f35c6280-9473-11eb-9c93-d7362af0fee5.jpg">
-
-### 🎈 팀원 모집
-<img width="800" src="https://user-images.githubusercontent.com/52696359/113466098-fd7e6100-9473-11eb-97dc-8f2e80ab9da2.jpg">
-
-### 🎈 팀원 검색
-<img width="800" src="https://user-images.githubusercontent.com/52696359/113466097-f9eada00-9473-11eb-9ddd-12e12f1a20e8.jpg">
-
-### 🎈 프로필 조회
-<img width="800" src="https://user-images.githubusercontent.com/52696359/113466102-0111e800-9474-11eb-8d48-1de231958702.jpg">
